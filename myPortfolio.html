@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Aline Asiimwe Portfolio Card</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aline,s portifolio</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
       tailwind.config = {
@@ -11,19 +11,42 @@
       }
     </script>
     <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-    />
+      rel="stylesheet"href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
   </head>
 
-  <body id="bod" class="bg-gray-400 font-sans transition-colors duration-500 dark:bg-gray-800 dark:text-white">
+<body id="bod" class="left-4 font-sans transition-colors duration-500 dark:bg-gray-800 dark:text-white">
+<header class="bg-white dark:bg-gray-900 top-0 z-50">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-between items-center py-4">
+      <div class="text-xl font-bold text-gray-800 dark:text-white">
+        Aline's Portfolio
+      </div>
 
-    <!-- Toggle Button -->
-    <div class="text-center mt-4">
-        <button onclick="toggleDarkMode()" class="absolute top-4 right-4 text-2xl text-yellow-400 dark:text-white hover:text-yellow-500 dark:hover:text-gray-300 transition"aria-label="Toggle Dark Mode">
+      <button id="menuBtn" class="sm:hidden text-2xl text-gray-700 dark:text-gray-200 focus:outline-none">
+        <i class="fas fa-bars"></i>
+      </button>
+
+      <nav id="navMenu" class="hidden sm:flex space-x-6 text-sm text-gray-700 dark:text-gray-300">
+        <a href="#" class="hover:text-purple-500 transition">Home</a>
+        <a href="#about" class="hover:text-purple-500 transition">About</a>
+        <a href="#contact" class="hover:text-purple-500 transition">Contact</a>
+      </nav>
+    </div>
+
+    <div id="mobileMenu" class="sm:hidden hidden flex-col space-y-2 pb-4 text-gray-700 dark:text-gray-300">
+      <a href="#" class="hover:text-purple-500 transition">Home</a>
+      <a href="#about" class="hover:text-purple-500 transition">About</a>
+      <a href="#contact" class="hover:text-purple-500 transition">Contact</a>
+    </div>
+        <button onclick="toggleDarkMode()" class="text-2xl text-yellow-400 dark:text-white hover:text-yellow-500 dark:hover:text-gray-300 transition"aria-label="Toggle Dark Mode">
         <i id="themeIcon" class="fas fa-moon"></i>
       </button>
     </div>
+  </div>
+</header>
+
+    <!-- Toggle Button -->
+    
 
     <main class="min-h-screen flex items-center justify-center p-4">
       <article class="flex flex-col lg:flex-row bg-white dark:bg-gray-700 rounded shadow-xl max-w-6xl w-full overflow-hidden transition-all duration-500 ease-in-out">
@@ -91,7 +114,10 @@
           <!-- Quotes -->
           <blockquote id="quoteBox" class="mt-6 italic text-sm text-purple-700 dark:text-purple-300 animate-bounce"></blockquote>
         </section>
-
+    </article>
+</main>
+        <footer class="text-center py-4 text-sm text-gray-700 dark:text-gray-400">
+            &copy; 2025 Aline Asiimwe. All rights reserved.
         <script>
           // Toggle dark mode
           function toggleDarkMode() {
@@ -118,8 +144,5 @@
           document.getElementById('quoteBox').textContent =
             quotes[Math.floor(Math.random() * quotes.length)];
         </script>
-
-      </article>
-    </main>
   </body>
 </html>
