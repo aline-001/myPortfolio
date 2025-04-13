@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Aline Asiimwe Portfolio Card</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+      }
+    </script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+  </head>
+
+  <body id="bod" class="bg-gray-400 font-sans transition-colors duration-500 dark:bg-gray-800 dark:text-white">
+
+    <!-- Toggle Button -->
+    <div class="text-center mt-4">
+        <button onclick="toggleDarkMode()" class="absolute top-4 right-4 text-2xl text-yellow-400 dark:text-white hover:text-yellow-500 dark:hover:text-gray-300 transition"aria-label="Toggle Dark Mode">
+        <i id="themeIcon" class="fas fa-moon"></i>
+      </button>
+    </div>
+
+    <main class="min-h-screen flex items-center justify-center p-4">
+      <article class="flex flex-col lg:flex-row bg-white dark:bg-gray-700 rounded shadow-xl max-w-6xl w-full overflow-hidden transition-all duration-500 ease-in-out">
+
+        <section class="bg-gray-600 p-6 text-center w-full lg:w-1/2">
+          <figure>
+            <img src="d.png" alt="Profile" class="mx-auto w-32 h-32 rounded-full border-blue-400 animate-pulse"/>
+            <figcaption class="mt-2 text-sm text-gray-300">Aline Asiimwe</figcaption>
+          </figure>
+          <h2 class="text-xl font-bold mt-4 ">Aline Asiimwe</h2>
+          <p class="flex items-center justify-center gap-2 mt-1">
+            <address><i class="fas fa-map-marker-alt"></i> Kigali, Rwanda</address>
+          </p>
+          <p class="text-sm italic mt-1">
+            Last Updated <time datetime="2025-04-12">12 April 2025</time>
+          </p>
+
+          <div class="mt-6">
+            <h3 class="font-semibold text-lg mb-2">Find Me On</h3>
+            <div class="flex justify-center space-x-4 text-xl ">
+              <a href="https://linkedin.com/in/asimwealine" target="_blank" aria-label="LinkedIn">
+                <i class="fab fa-linkedin hover:text-purple-500"></i>
+              </a>
+              <a href="https://github.com/aline-001" target="_blank" aria-label="GitHub">
+                <i class="fab fa-github hover:text-purple-500"></i>
+              </a>
+              <a href="https://twitter.com/asimealine" target="_blank" aria-label="Twitter">
+                <i class="fab fa-twitter hover:text-purple-500"></i>
+              </a>
+              <a href="mailto:asiimwealine@gmail.com" aria-label="Email">
+                <i class="fas fa-envelope hover:text-purple-500"></i>
+              </a>
+            </div>
+          </div>
+          <a href="cv.pdf" download class="inline-block mt-6 hover-underline text-white font-bold none transition-colors duration-300">
+            Download CV
+          </a>
+        </section>
+
+        <section class="w-full lg:w-3/4 p-6 sm:p-10 bg-gray-100 dark:bg-gray-900">
+          <h1 class="text-2xl sm:text-3xl font-bold mb-2">Hi, I am Aline Asiimwe</h1>
+          <p class="mb-4 italic text-gray-700 dark:text-gray-300">
+            A passionate Full-stack Developer who loves crafting beautiful UIs and learning new tech every day.
+          </p>
+          <p class="mb-6 text-gray-800 dark:text-gray-200">
+            My goal is to build fully interactive web experiences. I enjoy to bring my ideas to life.
+          </p>
+
+          <!-- Toggle More Info -->
+          <button id="aboutBtn" onclick="clicked()" class="bg-purple-500 hover:bg-purple-600 text-white font-bold py-2 px-6 rounded-full">
+            More About Me
+          </button>
+
+          <!-- Hidden More Info -->
+          <div id="moreInfo" class="hidden mt-4 space-y-2 text-gray-700 dark:text-gray-300">
+            <p>I love creating smooth, responsive UIs and playing with animations ✨</p>
+            <ul class="list-disc list-inside">
+              <li><strong>🛠️ Frontend:</strong> HTML, CSS, especially Tailwind, JavaScript</li>
+              <li><strong>🛠️ Backend:</strong> Python, Django, PHP</li>
+              <li>Hobby: Designing</li>
+              <li>Design: Figma & Adobe XD</li>
+            </ul>
+          </div>
+
+          <!-- Quotes -->
+          <blockquote id="quoteBox" class="mt-6 italic text-sm text-purple-700 dark:text-purple-300 animate-bounce"></blockquote>
+        </section>
+
+        <script>
+          // Toggle dark mode
+          function toggleDarkMode() {
+            const html = document.documentElement;
+            const icon = document.getElementById('themeIcon');
+            html.classList.toggle('dark');
+            icon.classList.toggle('fa-moon');
+            icon.classList.toggle('fa-sun');
+          }
+
+          // Toggle More Info
+          const more = document.getElementById("moreInfo");
+          const btn = document.getElementById("aboutBtn");
+          btn.addEventListener("click", () => {
+            more.classList.toggle("hidden");
+          });
+
+          // Show a random motivational quote
+          const quotes = [
+            "Believe in yourself and all that you are.",
+            "The future belongs to those who prepare today.",
+            "Don’t watch the clock; do what it does. Keep going."
+          ];
+          document.getElementById('quoteBox').textContent =
+            quotes[Math.floor(Math.random() * quotes.length)];
+        </script>
+
+      </article>
+    </main>
+  </body>
+</html>
